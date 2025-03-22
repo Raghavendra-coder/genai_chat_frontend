@@ -102,7 +102,7 @@ const App = () => {
 
   return (
     <div className="chat-container">
-      <h2 className="chat-title">AI Chatbot</h2>
+      <h2 className="chat-title">ASK ME ANYTHING</h2>
 
       {chatActive ? (
         <div className="input-container">
@@ -128,7 +128,7 @@ const App = () => {
             disabled={!question || loading} 
             className="send-btn"
           >
-            {loading ? "Processing..." : "Send"}
+            {loading ? "Processing..." : "Ask"}
           </button>
         </div>
       ) : (

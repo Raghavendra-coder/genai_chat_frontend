@@ -2,6 +2,11 @@ import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 
+// Set base URL based on current environment
+const API_BASE = window.location.hostname === 'localhost' 
+  ? 'http://127.0.0.1:8000' 
+  : 'https://genai-chat-backend-1.onrender.com';
+
 const App = () => {
   const [messages, setMessages] = useState([]);
   const [question, setQuestion] = useState("");
@@ -25,7 +30,7 @@ const App = () => {
     if (file) formData.append("file", file);
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/chat/file_summarize/", formData);
+      const response = await axios.post(`${API_BASE}/chat/file_summarize/`, formData);
 
       if (response.data) {
         setMessages([...messages, { 
@@ -34,7 +39,7 @@ const App = () => {
           summary: response.data.summarize 
         }]);
         setTimestamps(response.data.timestamps || []);
-        setFileURL(response.data.file_url ? `http://127.0.0.1:8000${response.data.file_url}` : null);
+        setFileURL(response.data.file_url ? `${API_BASE}${response.data.file_url}` : null);
         setIsVideo(response.data.is_video);
         setIsAudio(response.data.is_audio);
       }
@@ -47,7 +52,7 @@ const App = () => {
 
   const handleNewChat = async () => {
     try {
-      await axios.post("http://127.0.0.1:8000/chat/delete_transcription/");
+      await axios.post(`${API_BASE}/chat/delete_transcription/`);
       setMessages([]);
       setFile(null);
       setFileURL(null);

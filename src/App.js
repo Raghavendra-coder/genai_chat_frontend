@@ -149,7 +149,7 @@ const App = () => {
           <div key={index} className="message-box">
             <p><strong>You:</strong> {msg.you}</p>
             {msg.summary && <p><strong>Summary:</strong> {msg.summary}</p>}
-            <p><strong>Bot:</strong> {msg.bot}</p>
+            <p><strong>Raghav(9354537763):</strong> {msg.bot}</p>
           </div>
         ))}
       </div>

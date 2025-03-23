@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/genai_chat_frontend/static/css/main.752a36b6.css",
+    "main.js": "/genai_chat_frontend/static/js/main.339acb14.js",
+    "index.html": "/genai_chat_frontend/index.html",
+    "main.752a36b6.css.map": "/genai_chat_frontend/static/css/main.752a36b6.css.map",
+    "main.339acb14.js.map": "/genai_chat_frontend/static/js/main.339acb14.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.752a36b6.css",
+    "static/js/main.339acb14.js"
+  ]
+}
